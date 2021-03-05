@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沈阳航空航天大学出入登记</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .main-con {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 80vh;
+            width: 100vw;
+        }
+
+        .main-con button {
+            height: 100px;
+            width: 200px;
+            margin: 20px;
+            font-size: x-large;
+        }
+
+        .main-con a {
+            text-decoration: none;
+            color: black;
+        }
+
+        header {
+            height: 15vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #cc2bde, #279cec);
+            font-size: xx-large;
+            /* position: absolute; */
+            text-align: center;
+            color: aliceblue;
+            font-weight: bolder;
+        }
+        footer{
+            height: 5vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #cc2bde, #279cec);
+            text-align: center;
+            color: aliceblue;
+        }
+        p{
+            margin: 0 15px;
+        }
+        button{
+            min-height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Shenyang Areospace University<br>
+    </header>
+    <div class="main-con">
+            <h2>免责协议</h2>
+        <b>请勿传播</b>
+        <p>
+            &nbsp&nbsp本网站仅供学习使用，一切责任与本网站无关！一路顺风，诸君平安！
+        </p>
+        <button id="in" disabled=true onclick="window.location.href='indoor.html'">进门登记</button>
+        <button id="out" disabled=true onclick="window.location.href='outdoor.html'">出门登记</button>
+        <button id="chk">别点这里</button>
+    </div>
+    <footer><a href="http://beian.miit.gov.cn/" target="_blank"> 辽ICP备2020014014号</a></footer>
+    <script>
+        document.getElementById('chk').onclick = () => {
+            document.getElementById('in').disabled = document.getElementById('out').disabled = false
+            document.getElementById('chk').innerHTML = "已接受"
+            document.getElementById('chk').disabled = true
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="vXqNKnW2bbvLKBhahgFJNeE4f6ZkUNOzjRP0PGb1">
+    <title>
+        沈阳航空航天大学出入登记
+    </title>
+    <!-- <link href="/xyyy/cc.css?id=e292e3fdbf052c4098f0" rel="stylesheet" type="text/css"> -->
+    <link href="./animate.css" rel="stylesheet" type="text/css">
+    <style>
+        @-webkit-keyframes pulse {
+            50% {
+                -webkit-transform: scale3d(1.2, 1.2, 1.2);
+                transform: scale3d(1.2, 1.2, 1.2);
+            }
+        }
+
+        @keyframes pulse {
+            50% {
+                -webkit-transform: scale3d(1.2, 1.2, 1.2);
+                transform: scale3d(1.2, 1.2, 1.2);
+            }
+        }
+
+        .list-group {
+            padding: 1em;
+        }
+
+        .list-group-item {
+            font-size: 1.1em;
+            padding: 0.1em;
+            border: 0px;
+        }
+
+        .STYLE1 {
+            font-size: 20px
+        }
+
+        .STYLE2 {
+            color: #666666
+        }
+
+        input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: inherit;
+            font-weight: inherit;
+            text-align: inherit;
+        }
+
+        .textInp {
+            width: 100%;
+            color: #fff !important;
+            font-weight: 700 !important;
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            position: relative;
+        }
+
+        .word {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            left: 0;
+            top: 0;
+            position: absolute;
+            font-size: 50px;
+            color: #000;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="card border-0 text-center" style="color: #07c160">
+            <div class="card-body">
+                <h2 class="card-title" style="font-size: 1.8em;">
+                    沈航学生出门登记
+                </h2>
+                <div class="animated infinite pulse fa p-4">
+                    <!-- <img src="/img/cc8.png"> -->
+                    <!-- <img src="./pass.png"> -->
+                    <div class="box">
+                        <p class="word">
+                            <input type="text" value="1066751" id="hashId">
+                        </p>
+                        <img src="./pass.png">
+                    </div>
+                </div>
+                <p class="card-text" style="font-size: 1.4em;" id="time-text">
+                    时间：2020-10-06 18:59:48
+                </p>
+                <p class="card-text" style="font-size: 1.4em;">
+                    <input type="text" value="今日第1次使用出门" id="outCnt">
+                </p>
+                <p class="card-text" style="font-size: 1.4em;"></p>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush" style="background-color: #07c160">
+            <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
+                <div style="min-width: 4em; text-align-last: justify;">
+                    姓名
+                </div>
+                ：
+                <div>
+                    <input class="textInp" type="text" value="雷洞婷" id="name">
+                </div>
+            </li>
+            <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
+                <div style="min-width: 4em; text-align-last: justify;">
+                    学号
+                </div>
+                ：
+                <div>
+                    <input class="textInp" type="text" value="202005201314" id="no">
+                </div>
+            </li>
+            <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
+                <div style="min-width: 4em; text-align-last: justify;">
+                    电话
+                </div>
+                ：
+                <div>
+                    <input class="textInp" type="text" value="18004029925" id="phone">
+                </div>
+            </li>
+            <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
+                <div style="min-width: 4em; text-align-last: justify;">
+                    联 系 人
+                </div>
+                ：
+                <div>
+                    <input class="textInp" type="text" value="雷洞婷" id="con-name">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="STYLE1">
+        <div align="center" class="STYLE2">
+            信息网络中心提供相关技术支持
+        </div>
+    </div>
+    <script>
+        var time = new Date();
+        document.getElementById('time-text').innerHTML = "时间：" + time.getFullYear() + "-" + (time.getMonth() + 1) +
+            "-" + (time.getDate() < 10 ? ('0' + time.getDate()) : time.getDate()) + " " + time.toTimeString().substr(0,
+                9)
+        if (localStorage.getItem("name") != null) {
+            document.getElementById('name').value = localStorage.getItem("name")
+            document.getElementById('con-name').value = localStorage.getItem("name")
+        }
+        if (localStorage.getItem("no") != null) {
+            document.getElementById('no').value = localStorage.getItem("no")
+        }
+        if (localStorage.getItem("phone") != null) {
+            document.getElementById('phone').value = localStorage.getItem("phone")
+        }
+
+        document.getElementById('name').onchange = (e) => {
+            console.log("name")
+            localStorage.setItem('name', document.getElementById('name').value)
+        }
+        document.getElementById('no').onchange = (e) => {
+            localStorage.setItem('no', document.getElementById('no').value)
+        }
+        document.getElementById('phone').onchange = (e) => {
+            localStorage.setItem('phone', document.getElementById('phone').value)
+        }
+    </script>
+</body>
+
+</html>
